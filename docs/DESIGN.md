@@ -1,6 +1,6 @@
 # SENSO-Lens — design notes
 
-This document records *why* the code is the way it is. Each section names the decision, the alternative that was
+This document records *why* the code is the way it is (`docs/WALKTHROUGH.md` covers *where* things are and how the data flows). Each section names the decision, the alternative that was
 rejected, and the place in the code where it lives. Numbers are as of October 2026; see `docs/EVALUATION.md` for
 how they are measured.
 

@@ -94,8 +94,8 @@ WARN deviation 3/4 · [SL-W01] core/parser has been stabilizing since 2025-11 (1
   times in 24 h; a commit on the module resets it. Rules have stable ids (`SL-W01` …), tunable severities and
   suppressions that need a reason, an author and an expiry (`senso.rules.toml`).
 
-Design notes: [docs/DESIGN.md](docs/DESIGN.md) · rule deck: [docs/RULES.md](docs/RULES.md) · evaluation plan and
-results: [docs/EVALUATION.md](docs/EVALUATION.md).
+Design notes: [docs/DESIGN.md](docs/DESIGN.md) · code walkthrough for contributors: [docs/WALKTHROUGH.md](docs/WALKTHROUGH.md) ·
+rule deck: [docs/RULES.md](docs/RULES.md) · evaluation plan and results: [docs/EVALUATION.md](docs/EVALUATION.md).
 
 ## Command line
 
@@ -132,6 +132,9 @@ pip install -e ".[dev,mcp]"
 pytest -q                                  # 39 tests: unit, fixture-repo integration, gate, CLI, MCP, reference agreement
 python tests/fixture_repo.py demo-repo     # the scripted repository with known phases, for manual exploration
 ```
+
+New to the code? Start with [docs/WALKTHROUGH.md](docs/WALKTHROUGH.md): the data flow, every file's role, how to trace
+one call end to end, and where to change things.
 
 The fixture is a three-year history with a stabilizing load-bearing parser, a growing API, a declining `legacy/auth`
 with its successor `auth/service`, an isolated scripts module, bot noise and a rename — every test asserts against
