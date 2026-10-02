@@ -1,0 +1,18 @@
+# SENSO-Lens rule deck — copy to <repo>/senso.rules.toml (or run `senso rules --init`).
+# Severities: warn | info | off. `block` is reached only by escalation (same rule, same module,
+# unresolved 3 times in 24 h) and cannot be configured as a severity.
+
+[rules.SL-W01]           # addition to a stabilizing module
+severity = "warn"
+
+[rules.SL-W03]           # new coupling into stable or load-bearing code
+severity = "warn"
+
+# A suppression needs all five fields or it is ignored. It expires on `until` and is shown
+# (as `suppressed_by`) in every verdict it affects; expired suppressions are listed in every verdict.
+# [[suppress]]
+# rule = "SL-W01"
+# module = "core/parser"      # or "*"
+# reason = "parser v3 work approved in ADR-012"
+# by = "alice"
+# until = "2026-12-31"

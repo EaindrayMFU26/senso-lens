@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "senso-lens"
+version = "0.1.0"
+description = "Evolution context for AI coding agents: one shared incremental index over Git history, served in one sub-second call."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "4musketeerz, Mae Fah Luang University" }]
+keywords = ["software-evolution", "mcp", "coding-agents", "git-mining", "lehman"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+  "typer>=0.12",
+  "rich>=13",
+  "lizard>=1.17",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.0"]
+dev = ["pytest>=8", "pytest-cov", "radon>=6"]  # radon: reference implementation for the agreement test
+
+[project.scripts]
+senso = "senso_lens.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/EaindrayMFU26/senso-lens"
+Issues = "https://github.com/EaindrayMFU26/senso-lens/issues"
+
+[tool.setuptools.packages.find]
+include = ["senso_lens*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
